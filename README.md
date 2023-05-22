@@ -8,6 +8,14 @@ The application uses OpenAI’s GPT-3 model to find the most relevant part of th
 It calculates the cost based on the number of tokens processed by the model and displays this to the user.
 
 
+locally
 ```
 $ poetry run streamlit run app.py  
+```
+
+
+Docker
+
+```
+$ docker-compose up -d
 ```
