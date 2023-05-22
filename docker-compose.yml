@@ -2,7 +2,10 @@ version: '3'
 services:
   pdfbot:
     build: .
+    labels:
+      lagoon.type: basic
+      lagoon.service.port: 8501
     ports:
-      - 8000:8000
+      - 8501:8501
     env_file:
       - .env
