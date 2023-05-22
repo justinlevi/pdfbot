@@ -19,3 +19,5 @@ Docker
 ```
 $ docker-compose up -d
 ```
+
+update for push
