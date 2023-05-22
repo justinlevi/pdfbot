@@ -1,7 +1,9 @@
 version: '3'
 services:
   pdfbot:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     labels:
       lagoon.type: basic
       lagoon.service.port: 8501
