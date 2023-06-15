@@ -1,6 +1,6 @@
 import pytest
 import mock
-from app import num_tokens_from_string, calculate_cost, process_pdf, run_qa_chain
+from pdfbot.app import num_tokens_from_string, calculate_cost, process_pdf, run_qa_chain
 
 # Test num_tokens_from_string
 def test_num_tokens_from_string():

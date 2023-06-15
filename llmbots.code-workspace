@@ -1,0 +1,19 @@
+{
+	"folders": [
+			{
+					"path": "confluencebot",
+					"name": "confluencebot",
+					"settings": {
+							"python.pythonPath": "${folder}/.venv/bin/python"
+					}
+			},
+			{
+					"path": "pdfbot",
+					"name": "pdfbot",
+					"settings": {
+							"python.pythonPath": "${folder}/.venv/bin/python"
+					}
+			}
+	],
+	"settings": {}
+}

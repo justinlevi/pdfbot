@@ -10,7 +10,7 @@ It calculates the cost based on the number of tokens processed by the model and 
 
 locally
 ```
-$ poetry run streamlit run app.py  
+$ poetry run streamlit run pdf_app.py  
 ```
 
 

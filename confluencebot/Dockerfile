@@ -8,7 +8,7 @@ WORKDIR /tmp
 RUN pip install poetry
 
 # Copy files
-COPY ./pyproject.toml ./poetry.lock* /tmp/
+COPY ./confluencebot/pyproject.toml ./confluencebot/poetry.lock* /tmp/
 
 # Export the dependencies in requirements.txt
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
@@ -27,10 +27,13 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 # Copy the rest of your application
-COPY . /app/
+COPY ./confluencebot/ /app/
 
 # Expose the required port
 EXPOSE 8501
+EXPOSE 3000
+EXPOSE 4444
+EXPOSE 5678
 
 # Healthcheck command
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health

@@ -1,13 +1,36 @@
 version: '3'
 services:
+
   pdfbot:
+    volumes:
+      - ./pdfbot:/app
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: pdfbot/Dockerfile
     labels:
       lagoon.type: basic
       lagoon.service.port: 8501
     ports:
       - 8501:8501
     env_file:
-      - .env
+      - pdfbot/.env
+
+  confluencebot:
+    volumes:
+      - ./confluencebot:/app
+    environment:
+      - PYTHONBREAKPOINT=0
+    build:
+      context: .
+      dockerfile: confluencebot/Dockerfile
+    labels:
+      lagoon.type: basic
+      lagoon.service.port: 8501
+    ports:
+      - 8502:8501
+      - 3000:3000
+      - 4444:4444
+      - 5678:5678
+    env_file:
+      - confluencebot/.env
+    # command: ["python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "app.py"]
